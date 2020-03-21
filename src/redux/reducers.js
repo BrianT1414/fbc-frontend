@@ -1,0 +1,1 @@
+export { default as sermon } from './sermon';
