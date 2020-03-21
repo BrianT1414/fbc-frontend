@@ -1,5 +1,6 @@
 import React from 'react';
 import YouTube from '../YouTube';
+import AudioOptions from '../AudioOptions';
 
 const SermonList = (props) => {
   return (
@@ -28,9 +29,7 @@ const SermonAV = (props) => {
       <h3>{date}</h3>
       <div style={{ textAlign: 'center', margin: 15 }}>
         <YouTube url={props.sermon.url} />
-        <div>
-          <a href={props.sermon.audio} download>Or Download the Audio Here</a>
-        </div>
+        <AudioOptions audio={props.sermon.audio} />
       </div>
     </>
   );
