@@ -8,7 +8,7 @@ const PageRouter = (props) => {
     <div>
       <Paper style={{ maxWidth: 1000, margin: 'auto', minHeight: 800 }}>
         <Header />
-        <div style={{ marginLeft: 15 }}>
+        <div style={{ margin: 15 }}>
           <SermonList sermons={props.sermons} />
         </div>
       </Paper>
