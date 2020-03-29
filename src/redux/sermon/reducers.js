@@ -2,6 +2,16 @@ import { combineReducers } from 'redux';
 
 const initialSermons = [
   {
+    date: '2020-04-06',
+    url: 'https://www.youtube.com/embed/ihMklIGhdCQ',
+    audio: '/assets/FBC_2020-04-05_audio.mp3'
+  },
+  {
+    date: '2020-03-30',
+    url: 'https://www.youtube.com/embed/1XRKySneQ8M',
+    audio: '/assets/FBC_2020-03-29_audio.mp3'
+  },
+  {
     date: '2020-03-23', // UTC for the 22nd
     url: "https://www.youtube.com/embed/1IXuXciDCc0",
     audio: "/assets/2020-03-22.mp3"

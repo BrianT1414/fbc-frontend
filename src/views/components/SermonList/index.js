@@ -5,9 +5,17 @@ import AudioOptions from '../AudioOptions';
 const SermonList = (props) => {
   return (
     <>
-      {props.sermons.map((sermon) => (
-        <SermonAV key={sermon.date} sermon={sermon} />
-      ))}
+      {props.sermons.map((sermon, i) => {
+        if (i === 0) {
+          return (
+            <CurrentSermon  key={sermon.date} sermon={sermon} />
+          );
+        } else {
+          return (
+            <PreviousSermon key={sermon.date} sermon={sermon} />
+          );
+        }
+      })}
     </>
   );
 }
@@ -31,6 +39,22 @@ const SermonAV = (props) => {
         <YouTube url={props.sermon.url} />
         <AudioOptions audio={props.sermon.audio} />
       </div>
+      <hr/>
     </>
+  );
+}
+
+const CurrentSermon = (props) => {
+  return (
+    <SermonAV {...props} />
+  );
+}
+
+const PreviousSermon = (props) => {
+  return (
+    <div style={{ marginTop: 15, maxWidth: 500 }}>
+      <SermonAV {...props} />
+      <hr />
+    </div>
   );
 }
