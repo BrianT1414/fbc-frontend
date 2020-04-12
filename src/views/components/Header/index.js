@@ -127,9 +127,9 @@ const Header = (props) => {
       </div>
       <Drawer
         className={classes.drawer}
-        variant="persistent"
         anchor="right"
         open={open}
+        onClose={handleDrawerClose}
         classes={{
           paper: classes.drawerPaper,
         }}

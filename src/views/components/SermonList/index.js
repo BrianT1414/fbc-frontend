@@ -54,7 +54,6 @@ const PreviousSermon = (props) => {
   return (
     <div style={{ marginTop: 15, maxWidth: 500 }}>
       <SermonAV {...props} />
-      <hr />
     </div>
   );
 }
