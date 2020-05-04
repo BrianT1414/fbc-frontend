@@ -108,6 +108,25 @@ const Header = (props) => {
             >
               Good Friday Reading
             </Button>
+            {Object.keys(props.user).length > 0 ?
+              <>
+                <Button
+                  onClick={() => props.changePage('/administration')}
+                  style={{ marginLeft: 25 }}
+                >
+                  Admin Area
+                </Button>
+                <Button
+                  onClick={() => {
+                    props.logout();
+                    props.changePage('/');
+                  }}
+                  style={{ marginLeft: 25 }}
+                >
+                  Logout
+                </Button>
+              </>
+            : null}
           </div>
         </div>
         <div className="col-3 d-md-none">

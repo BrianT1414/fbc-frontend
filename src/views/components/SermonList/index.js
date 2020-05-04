@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import YouTube from '../YouTube';
 import AudioOptions from '../AudioOptions';
 
@@ -8,11 +9,11 @@ const SermonList = (props) => {
       {props.sermons.map((sermon, i) => {
         if (i === 0) {
           return (
-            <CurrentSermon  key={sermon.date} sermon={sermon} />
+            <CurrentSermon  key={sermon.id} sermon={sermon} />
           );
         } else {
           return (
-            <PreviousSermon key={sermon.date} sermon={sermon} />
+            <PreviousSermon key={sermon.id} sermon={sermon} />
           );
         }
       })}
@@ -23,21 +24,22 @@ const SermonList = (props) => {
 export default SermonList;
 
 function formatDate(value) {
-  let d = new Date(Date.parse(value));
+  let date = moment(value, 'YYYY-MM-DD HH:mm:ss');
 
-  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  return d.toLocaleDateString("en-US", options);
+  return date.format('dddd, MMMM Do, YYYY');
 }
 
 const SermonAV = (props) => {
-  const date = formatDate(props.sermon.date);
+  const date = formatDate(props.sermon.published_on);
 
   return (
     <>
       <h3>{date}</h3>
       <div style={{ textAlign: 'center', margin: 15 }}>
-        <YouTube url={props.sermon.url} />
-        <AudioOptions audio={props.sermon.audio} />
+        <YouTube url={props.sermon.video.youtube_id} />
+        {props.sermon.audio_file ? 
+          <AudioOptions audio={props.sermon.audio_file.public_path} />
+        : null}
       </div>
       <hr/>
     </>

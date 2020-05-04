@@ -6,7 +6,7 @@ const YouTube = (props) => {
       <iframe 
         width={props.width || "560"}
         height={props.height || "315"}
-        src={props.url}
+        src={"https://www.youtube.com/embed/" + props.url}
         frameBorder="0" 
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
         allowFullScreen
