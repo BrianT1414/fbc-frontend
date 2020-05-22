@@ -92,8 +92,22 @@ const Header = (props) => {
   return (
     <header>
       <div className="row">
-        <div className="col-md-4 col-9">
-          <a href="/" onClick={handleLogoClick}><img src='/assets/fbc_title.png' height="150" /></a>
+        <div className="col-4 d-none d-md-block">
+          <a href="/" onClick={handleLogoClick}>
+            <img 
+              src='/assets/fbc_title.png' 
+              height="150" 
+            />
+          </a>
+        </div>
+        <div className="col-9 d-md-none">
+          <a href="/" onClick={handleLogoClick}>
+            <img 
+              src='/assets/fosterburg_title_no_logo.png' 
+              height="50" 
+              style={{ margin: 20 }}
+            />
+          </a>
         </div>
         <div className="col-8 d-none d-md-block">
           <div style={{ textAlign: 'right', marginRight: 20, marginTop: 112 }}>
@@ -130,7 +144,7 @@ const Header = (props) => {
           </div>
         </div>
         <div className="col-3 d-md-none">
-          <div style={{ textAlign: 'right', marginRight: 20, marginTop: 112 }}>
+          <div style={{ textAlign: 'right', marginRight: 20, marginTop: 20 }}>
             <IconButton
               color="inherit"
               aria-label="open drawer"

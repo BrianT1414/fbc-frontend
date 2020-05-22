@@ -15,6 +15,15 @@ const MenuBar = (props) => {
       >
         <ListItemText primary="Sermons" />
       </ListItem>
+      <ListItem 
+        button
+        onClick={() => {
+          props.changePage('/administration/errors');
+        }}
+        alignItems="center"
+      >
+        <ListItemText primary="Errors" />
+      </ListItem>
     </List>
   );
 }

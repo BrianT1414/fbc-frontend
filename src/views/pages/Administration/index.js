@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import ManageSermons from './ManageSermons';
 import MenuBar from './MenuBar';
+import ErrorViewer from './ErrorViewer';
 
 const Administration = (props) => {
   if (Object.keys(props.user).length === 0) {
@@ -36,6 +37,12 @@ const Administration = (props) => {
               resetCreateSermonMeta={props.resetCreateSermonMeta}
               resetUpdateSermonMeta={props.resetUpdateSermonMeta}
               resetDeleteSermonMeta={props.resetUpdateSermonMeta}
+            />
+          </Route>
+          <Route path="/administration/errors">
+            <ErrorViewer 
+              errors={props.errors}
+              getErrors={props.getErrors}
             />
           </Route>
         </Switch>

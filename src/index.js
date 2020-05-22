@@ -9,11 +9,11 @@ const store = createStore();
 
 const Wrapper = (props) => {
   return (
-    <Provider store={store}>
-      <ErrorBoundary>
-        <Main />
-      </ErrorBoundary>
-    </Provider>
+    <ErrorBoundary>
+      <Provider store={store}>
+          <Main />
+      </Provider>
+    </ErrorBoundary>
   );
 }
 

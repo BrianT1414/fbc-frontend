@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import ajax from '../../../utils/ajax';
 
 /** Why did I not catch your error?
 
@@ -23,6 +24,15 @@ class ErrorBoundary extends React.Component {
     this.setState({
       error: error,
       errorInfo: errorInfo
+    });
+
+    ajax({
+      method: 'POST',
+      url: '/api/errors',
+      data: {
+        error: error.message,
+        errorInfo
+      }
     });
   }
   
